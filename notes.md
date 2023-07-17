@@ -17,3 +17,6 @@
 - Istanbul
 - Ava
 - Enzyme
+- Nightmare
+- TestCafé
+- Cypress
