@@ -6,7 +6,7 @@
   "author": "gnunez-dev <gnunez.dev@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watch *.js"
   },
   "devDependencies": {
     "jest": "^29.6.1"
