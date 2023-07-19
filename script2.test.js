@@ -15,9 +15,10 @@ it('calls swapi to get people with async/await', (done) => {
 
 //opntio return
 it('calls swapi to get people with a promise', () => {
-  expect.assertions(1)
+  expect.assertions(2)
   return swapi.getPeoplePromise(fetch)
     .then( data => {
       expect(data.count).toEqual(87)
+      expect(data.results.length).toBeGreaterThan(5)
     })
 })
