@@ -12,6 +12,6 @@
     "jest": "^29.6.1"
   },
   "dependencies": {
-    "node-fetch": "2.1.2"
+    "axios": "^1.4.0"
   }
 }

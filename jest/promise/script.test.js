@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+const axios = require('axios');
 const swapi = require('./script');
 
 //Test with a function that return a promise.
@@ -6,7 +6,7 @@ const swapi = require('./script');
 //option done
 it('calls swapi to get people with async/await', (done) => {
   expect.assertions(1)
-  swapi.getPeople(fetch)
+  swapi.getPeople(axios)
     .then(data => {
       expect(data.count).toEqual(87)
       done()
@@ -16,7 +16,7 @@ it('calls swapi to get people with async/await', (done) => {
 //opntio return
 it('calls swapi to get people with a promise', () => {
   expect.assertions(2)
-  return swapi.getPeoplePromise(fetch)
+  return swapi.getPeoplePromise(axios)
     .then( data => {
       expect(data.count).toEqual(87)
       expect(data.results.length).toBeGreaterThan(5)
@@ -27,10 +27,10 @@ it('calls swapi to get people with a promise', () => {
 it('getPeople returns count and results with mock', () => {
   const mockFetch = jest.fn()
     .mockReturnValue(Promise.resolve({
-      json: () => Promise.resolve({
+      data: {
         count: 87,
         results: [0, 1, 2, 3, 4, 5]
-      })
+      }
     }))
 
   expect.assertions(4)
