@@ -7,7 +7,7 @@ it('calls swapi to get people with async/await', async () => {
 })
 
 it('calls swapi to get people with a promise', () => {
-  swapi.getPeople(fetch)
+  swapi.getPeoplePromise(fetch)
     .then( response => response.json())
     .then( data => {
       expect(data.count).toEqual(87)
