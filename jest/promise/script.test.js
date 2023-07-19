@@ -1,5 +1,5 @@
 const fetch = require('node-fetch');
-const swapi = require('./script2');
+const swapi = require('./script');
 
 //Test with a function that return a promise.
 
